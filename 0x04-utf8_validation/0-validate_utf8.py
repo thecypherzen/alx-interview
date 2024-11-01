@@ -22,10 +22,11 @@ def validUTF8(data: list) -> bool:
                 byte_count = 3
             else:
                 return False
-
             # check if following bytes begin with a leading 10
             while byte_count:
                 index_i += 1
+                if index_i >= max_len:
+                    return False
                 if data[index_i] >> 6 != 0b10:
                     return False
                 byte_count -= 1
