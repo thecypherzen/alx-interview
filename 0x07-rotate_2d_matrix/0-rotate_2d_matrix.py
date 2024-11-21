@@ -27,8 +27,9 @@ def rotate_2d_matrix(matrix):
     # transpose matrix
     i = 0
     while i < N:
+        n = len(matrix[i])  # this avoids error for nxm matrix
         j = i + 1
-        while j < N:
+        while j < n:
             matrix[i][j] = matrix[i][j] ^ matrix[j][i]
             matrix[j][i] = matrix[i][j] ^ matrix[j][i]
             matrix[i][j] = matrix[i][j] ^ matrix[j][i]
