@@ -23,7 +23,7 @@ The following can be used for referencing these areas, curated for optimized und
 - **Released:** Mon Nov 18 2024 - 6am.
   - **1st Deadline** Fri Nov. 22 2024 - 6am.
   - **Duration:** 96hrs (4 days)
-  - **Completed:** TBD
+  - **Completed:** Thu Nov 21 2024 - 5:80am.
 
 
 ## Files  ###
