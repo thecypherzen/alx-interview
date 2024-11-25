@@ -1,29 +1,65 @@
 # Overview #
 
-## Background Context ##
-Rotating a 2D matrix 90 degrees clockwise is a common interview challenge.  It's relatively simple to implement in Python and while it seems like an abstract concept, its application is useful in various areas of software development which include:
-- Image Rotation: Rotating an image by 90 degrees is a common operation in image editing, photo manipulation, or preprocessing for computer vision.
-- Game Development: Used to rotate sprites, textures, or game maps in 2D games.
-- Canvas Manipulation: In GUI applications, it is often necessary to rotate elements for alignment or styling.
-- Chart Orientation: Rotating heatmaps, tables, or grid-based plots for better visualization.
-- Text Alignment: Reorienting labels or titles in a graphical representation.
-- Tetris: Rotating blocks is a fundamental mechanic in games like Tetris, where shapes are rotated 90 degrees to fit into spaces.
-- And many other instances where a grid roatation is a needed.
+## Must Know for Pascal's Triangle ##
+To successfully implement the Pascal's triangle in Python, it's necessary to revise the following Python concepts.
 
-So now knowing that it's useful and applicable, sit back, relax and reminisce on how you can apply this technique in the future. Cheers and Happy Coding!
+### Lists and List Comprehensions: ###
+
+- Understand how to create, access, modify, and iterate over lists.
+- Utilize list comprehensions for more concise and readable code, especially for generating rows of Pascal’s Triangle.
+
+### Functions:# 
+- Know how to define and call functions.
+- Pass parameters and return values, particularly how to return a list of lists representing Pascal’s Triangle.
+
+### Loops:
+- Use for and while loops to iterate through sequences.
+- Nested loops may be necessary for generating each row and calculating the values of Pascal’s Triangle.
+
+### Conditional Statements:
+- Apply if, elif, and else conditions to implement logic based on the position within Pascal’s Triangle (e.g., the edges of the triangle always being 1).
+
+### Recursion (Optional):
+- While not strictly necessary, understanding recursion can provide an alternative approach to generating Pascal’s Triangle.
+- Recognize base cases and recursive cases for a function that generates the triangle’s rows.
+
+### Arithmetic Operations:
+- Perform addition, a fundamental operation for calculating each element of Pascal’s Triangle as the sum of the two elements directly above it.
+
+### Indexing and Slicing:
+- Access elements and slices of lists, crucial for identifying and summing the correct elements when constructing each row of the triangle.
+
+
+### Memory Management:
+- Be mindful of how lists are stored and copied, especially when creating new rows based on the values of the previous row.
+
+### Error and Exception Handling (Optional):
+- Use try-except blocks as needed to handle potential errors, such as invalid input types or values.
+
+### Efficiency and Optimization:
+- Consider the time and space complexity of different approaches to generating Pascal’s Triangle.
+- Evaluate and apply optimizations to improve the performance of the solution.
+
+## My Approach ##
+- I used the iterative approac because the recursive approach for this would not yield any significant benefit to the efficiency of the solution and could possible load the stack more than the iterative solution
+- I also used a memoized cache of rows in order to re-use them once they've been generated before.
+- I didn't revisit the code to make it more efficient, so pardon me if you find some inefficient stuff in the solution - I'd fix it on a live project
 
 ## Reference Materials ##
 The following can be used for referencing these areas, curated for optimized understanding:
-
+- [What is Pascal’s triangle](https://www.cuemath.com/algebra/pascals-triangle/)
+- [Pascal’s Triangle - Numberphile](https://www.youtube.com/watch?feature=shared&v=0iMtlus-afo)
+- [What are Python Algorithms](https://builtin.com/data-science/python-algorithms)
+- [Mock Technical Interview](https://www.youtube.com/watch?feature=shared&v=1qw5ITr3k9E)
 
 ## Folder Details ###
-- **Date Created:** Wed Nov. 20 2024 5:47pm
+- **Date Created:** Mon Nov. 25 2024 5:47pm
 - **Author:** [William Inyam](https.//github.com/thecypherzen).
 - **Project Timeline:**
-- **Released:** Mon Nov 18 2024 - 6am.
-  - **1st Deadline** Fri Nov. 22 2024 - 6am.
+- **Released:** Mon Sept 30 2024 - 6am.
+  - **1st Deadline** Fri Oct 4 2024 - 6am.
   - **Duration:** 96hrs (4 days)
-  - **Completed:** Thu Nov 21 2024 - 5:80am.
+  - **Completed:** Mon Nov 25 2024 - 7:20pm
 
 
 ## Files  ###
@@ -31,4 +67,5 @@ The following can be used for referencing these areas, curated for optimized und
 
 | **SN** | File                         | Description                                         |
 |----|----------------------------------------------------|---------------------------------------|
-| 1. | [0-rotate_2d_matrix.py](https://github.com/thecypherzen/alx-interview/tree/main/0x07-rotate_2d_matrix/0-rotate_2d_matrix.py) | A script that rotates a 2D array 90deg clockwise. |
+| 1. | [0-pascal_triangle.py](https://github.com/thecypherzen/alx-interview/tree/main/0x00-pascal_triangle/0-pascal_triangle.py) | A function that generates a list of lists that represent Pascal's triangle of size n. |
+| 2. | [main_0.py](https://github.com/thecypherzen/alx-interview/tree/main/0x00-pascal_triangle/main_0.py) | Test for pascal's triangle implementation. | 
