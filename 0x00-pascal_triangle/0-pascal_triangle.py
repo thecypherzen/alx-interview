@@ -6,6 +6,16 @@
 def pascal_triangle(n):
     """Returns a list of lists representing
     Pascal's triangle from 1 to n
+
+    Params:
+      n(int): the order of the pascal's triangle
+
+    Expects:
+      - n to be an integer
+
+    Returns:
+      - List of list of Pascal's triangle numbers if n > 0
+      - An empty list if n <= 0
     """
     res = []
     if n <= 0:
