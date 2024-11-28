@@ -56,4 +56,6 @@ def makeChange(coins, total):
     """
     cache = {}
     min_coins = changeMaker(coins, total, cache)
-    return min_coins or -1
+    if min_coins is None:
+        return -1
+    return min_coins
