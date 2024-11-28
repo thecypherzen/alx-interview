@@ -4,13 +4,34 @@
 import time
 
 makeChange = __import__('0-making_change').makeChange
+before = time.time()
+coins, total = [1, 4, 5], 13
+print(f"coins: {coins}, total: {total}")
+change = makeChange(coins, total)
+after = time.time()
+print(f"  {change} ({(after - before):.6f}s)")
 
-beforeA = time.time()
-changeA = makeChange([1, 2, 25], 37)
-afterA = time.time()
-print(f"changeA: {changeA}, TIME: {afterA - beforeA:.6f}")
+print('++++++++++++++++++++++++++++')
 
-beforeB = time.time()
-changeB = makeChange([1256, 54, 48, 16, 102], 1453)
-afterB = time.time()
-print(f"changeB: {changeB}, TIME: {afterB - beforeB:6f}")
+coins, total = [1, 4, 5], 150
+print(f"coins: {coins}, total: {total}")
+before = time.time()
+change = makeChange(coins, total)
+after = time.time()
+print(f"  {change} ({(after - before):.6f}s)")
+print('++++++++++++++++++++++++++++')
+
+coins, total = [1, 2, 25], 37
+print(f"coins: {coins}, total: {total}")
+before = time.time()
+change = makeChange(coins, total)
+after = time.time()
+print(f"  {change} ({(after - before):.6f}s)")
+print('++++++++++++++++++++++++++++')
+
+coins, total = [1256, 54, 48, 16, 102], 1453
+print(f"coins: {coins}, total: {total}")
+before = time.time()
+change = makeChange(coins, total)
+after = time.time()
+print(f"  {change} ({(after - before):.6f}s)")
