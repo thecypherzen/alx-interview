@@ -54,6 +54,8 @@ def makeChange(coins, total):
        - 0 if total is <= 0
        - -1 if total cannot be met by any number of coins we have
     """
+    if total < 0 or len(coins) == 0:
+        return -1
     cache = {}
     min_coins = changeMaker(coins, total, cache)
     if min_coins is None:
