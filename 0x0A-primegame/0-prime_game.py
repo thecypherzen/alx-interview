@@ -32,7 +32,7 @@ def isWinner(x, nums):
                1: {"name": "Ben", "wins": 0}
                }
     primes = get_primes(nums)
-    if not len(primes):
+    if not len(nums) or not len(primes):
         return None
     for itr in range(x):
         nums_cpy = nums.copy()
