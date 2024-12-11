@@ -28,10 +28,14 @@ def isWinner(x, nums):
        => filter out all multiples of current prime number
        => set array to filtered array
     """
+    if not x <= 0 or not len(nums):
+        return None
     players = {0: {"name": "Maria", "wins": 0},
                1: {"name": "Ben", "wins": 0}
                }
     primes = get_primes(nums)
+    if not len(primes):
+        return None
     for itr in range(x):
         nums_cpy = nums.copy()
         this_turn, next_turn = 0, 1
