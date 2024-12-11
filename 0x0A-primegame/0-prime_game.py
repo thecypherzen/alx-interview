@@ -30,10 +30,11 @@ def isWinner(x, nums):
     players = {0: {"name": "Maria", "wins": 0},
                1: {"name": "Ben", "wins": 0}
                }
-    for num in nums:
-        numbers, primes = list(range(1, num + 1)), get_primes(num)
-        if not primes or not nums:
-            return None
+    if x > len(nums):
+        return None
+    for k in range(x):
+        numbers = list(range(1, nums[k] + 1))
+        primes = get_primes(nums[k])
         numbers_cpy, array_bound = numbers.copy(), len(numbers)
         this_turn, next_turn = 0, 1
         deleted = float('-inf')
