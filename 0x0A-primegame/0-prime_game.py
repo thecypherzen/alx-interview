@@ -32,6 +32,8 @@ def isWinner(x, nums):
                }
     for num in nums:
         numbers, primes = list(range(1, num + 1)), get_primes(num)
+        if not primes or not nums:
+            return None
         numbers_cpy, array_bound = numbers.copy(), len(numbers)
         this_turn, next_turn = 0, 1
         deleted = float('-inf')
