@@ -3,19 +3,18 @@
 """
 
 
-def get_primes(nums):
+def get_primes(num):
     """return prime numbers <= num
     """
-    min_num, max_num = min(nums), max(nums)
-    primes = [True for _ in range(max_num + 1)]
-    numbers = [i for i in range(max_num + 1)]
+    primes = [True for _ in range(num + 1)]
+    numbers = [i for i in range(num + 1)]
     p = 2
-    while (p * p <= max_num):
+    while (p * p <= num):
         if primes[p]:
-            for i in range(p * p, max_num+1, p):
+            for i in range(p * p, num+1, p):
                 primes[i] = False
         p += 1
-    return [numbers[i] for i in range(2, max_num+1) if primes[i]]
+    return [numbers[i] for i in range(2, num+1) if primes[i]]
 
 
 def isWinner(x, nums):
@@ -31,31 +30,29 @@ def isWinner(x, nums):
     players = {0: {"name": "Maria", "wins": 0},
                1: {"name": "Ben", "wins": 0}
                }
-    primes = get_primes(nums)
-    if not len(nums) or not len(primes):
-        return None
-    for itr in range(x):
-        nums_cpy = nums.copy()
+    for num in nums:
+        numbers, primes = list(range(1, num + 1)), get_primes(num)
+        numbers_cpy, array_bound = numbers.copy(), len(numbers)
         this_turn, next_turn = 0, 1
-        array_bound = len(nums)
         deleted = float('-inf')
         for i in range(array_bound):
-            if nums[i] in primes:
+            if numbers[i] in primes:
                 # remove prime number and its multiples from array
                 for j in range(array_bound):
-                    if nums[j] > deleted and \
-                       nums[j] != 1 and \
-                       not nums[j] % nums[i]:
-                        nums[j] = deleted
+                    if numbers[j] > deleted and \
+                       numbers[j] != 1 and \
+                       not numbers[j] % numbers[i]:
+                        numbers[j] = deleted
+                # change turns
                 this_turn = this_turn ^ next_turn
                 next_turn = this_turn ^ next_turn
                 this_turn = this_turn ^ next_turn
             else:
                 pass
         players[next_turn]["wins"] = players[next_turn]["wins"] + 1
-        nums = nums_cpy
-    # extrapolate winner
-    maria, ben = players[next_turn]["wins"], players[next_turn]["wins"]
+        numbers = numbers_cpy
+    # determine winner
+    maria, ben = players[0]["wins"], players[1]["wins"]
     if maria == ben:
         return None
     if maria > ben:
