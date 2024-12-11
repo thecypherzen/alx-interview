@@ -56,4 +56,9 @@ def isWinner(x, nums):
         nums = nums_cpy
     # extrapolate winner
     maria, ben = players[next_turn]["wins"], players[next_turn]["wins"]
-    return players[0]["name"] if maria > ben else players[1]["name"]
+    if maria == ben:
+        return None
+    if maria > ben:
+        return players[0]["name"]
+    else:
+        return players[1]["name"]
